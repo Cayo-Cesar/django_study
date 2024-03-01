@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="author" content="Cayo Cesar">
+    <meta name="description" content="exemplo de uma página de cadastro">
+    <meta name="keywords" content="html5, css3, front-end, tecnologia">
+    <meta charset="utf-8" />
+    <title>Tela de Cadastro</title>
+    <style>
+        /* CSS */
+        @import url("https://fonts.googleapis.com/css?family=Lato");
+
+        body{
+            padding: 0;
+            margin: 0;
+        }
+
+        .container{
+            width: 100vw; /* Corrigi a unidade de medida */
+            height: 100vh;
+            background: #C7CAC7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-box{
+            width: 300px;
+            background: #fff;
+            font-family: Lato;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border-top: 10px solid #4CAF50;
+        }
+
+        .form-box .form-input{
+            border: none;
+            background: #eee;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            font-size: large;
+            margin-bottom: 10px;
+        }
+
+        .form-box .form-btn{
+            border: none;
+            background: #4CAF50;
+            width: 100%;
+            height: 50px;
+            font-size: large;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos para o aviso */
+        .aviso {
+            display: block; /* Inicialmente oculto */
+            color: green;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <div class="aviso" id="aviso">
+                Usuário cadastrado com sucesso! Por favor, faça login.
+            </div>
+            <form action="" method="post">
+                {% csrf_token %} <!-- Adiciona o token CSRF -->
+                <div>
+                    <h1>Cadastro do Usuário</h1>
+                </div>
+                <div>
+                    <input type="text" name="username" placeholder="Informe o seu Username" class="form-input">
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="Informe a sua Senha" class="form-input">
+                </div>
+                <div>
+                    <input type="email" name="email" placeholder="Informe o seu E-mail" class="form-input">
+                </div>
+                <div>
+                    <input type="submit" value="Cadastrar" class="form-btn">
+                </div>
+                <div>
+                    Você já tem uma conta? <a href="../">Efetue o seu Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

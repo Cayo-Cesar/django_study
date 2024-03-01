@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="author" content="Cayo Cesar">
+    <meta name="description" content="exemplo de uma página de cadastro">
+    <meta name="keywords" content="html5, css3, front-end, tecnologia">
+    <meta charset="utf-8" />
+    <title>Tela de Login</title>
+    <style>
+        /* CSS */
+        @import url("https://fonts.googleapis.com/css?family=Lato");
+
+        body{
+            padding: 0;
+            margin: 0;
+        }
+
+        .container{
+            width: 100w;
+            height: 100vh;
+            background: #C7CAC7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-box{
+            width: 300px;
+            background: #fff;
+            font-family: Lato;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border-top: 10px solid #C05B65;
+        }
+
+        .form-box .form-input{
+            border: none;
+            background: #eee;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            font-size: large;
+            margin-bottom: 10px;
+        }
+
+        .form-box .form-btn{
+            border: none;
+            background: #C05B65;
+            width: 100%;
+            height: 50px;
+            font-size: large;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 340px){
+            .form-box{
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+    <body>
+        <div class="container">
+            <div class="form-box">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <h1>Login</h1>
+                    </div>
+                    <div>
+                        <input type="text" name="username" placeholder="Informe seu Username" class="form-input">
+                    </div>
+                    <div>
+                        <input type="password" name="password" placeholder="Informe sua Senha" class="form-input">
+                    </div>
+                    <div>
+                        <input type="submit" value="Entrar" class="form-btn">
+                    </div>
+                    <div>
+                        Não é Cadastrado? <a href="/register/">Crie uma Conta</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
