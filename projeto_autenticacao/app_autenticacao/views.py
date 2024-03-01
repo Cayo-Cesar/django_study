@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.hashers import make_password, check_password
 from .models import Usuario
 
+#login
 def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
